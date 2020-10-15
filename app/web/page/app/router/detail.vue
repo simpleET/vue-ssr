@@ -16,6 +16,7 @@
     },
     asyncData({ state, dispatch, commit }) {
       const { id } = state.route.params;
+      console.log('id=='+id)
       return dispatch('FETCH_ARTICLE_DETAIL', { id })
     }
   }

@@ -1,5 +1,6 @@
 module.exports = {
   "env": {
+    // Node 端编译成 ES6
     "node": {
       "presets": [
         [
@@ -17,6 +18,7 @@ module.exports = {
         "@babel/plugin-syntax-dynamic-import"
       ]
     },
+    // web 端 编译成 ES5
     "web": {
       "presets": [
         [
