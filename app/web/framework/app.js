@@ -1,7 +1,5 @@
 import Vue from 'vue';
 import { sync } from 'vuex-router-sync';
-import './vue/filter';
-import './vue/directive';
 
 export default class App {
   constructor(config) {
