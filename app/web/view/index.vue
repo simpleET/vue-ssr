@@ -1,8 +1,9 @@
 <template>
     <div class="index-page">
         <header>
-            导航栏
+            顶部
         </header>
+        <nav>导航栏</nav>
         <router-link :to="{name:'Detail'}">详情页</router-link>
     </div>
 </template>
@@ -11,7 +12,7 @@
     export default {
         name: "index"
     }
-</script>]
+</script>
 
 <style lang="scss" scoped>
     @import "../style/index.scss";

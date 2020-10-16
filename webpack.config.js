@@ -12,7 +12,7 @@ module.exports = {
       to: 'asset/css/bootstrap.min.css'
     }]*/
   }],
-  scss: {
+  /*scss: {
     options: { includePaths: ["app/web/style"] }
   },
   module:{
@@ -26,5 +26,5 @@ module.exports = {
         ]
       },
     ]
-  },
+  },*/
 };

@@ -1,8 +1,16 @@
 @import "variable";
 
-.index-page{
-  color:red;
-  header{
-    color:blue;
+.index-page {
+  color: red;
+
+  header {
+    color: blue;
+  }
+
+  nav {
+    border-radius: 4px;
+    border: 1px solid red;
+    box-shadow: 1px 1px red;
+    transform: translateY(10px);
   }
 }
