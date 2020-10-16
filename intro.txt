@@ -18,3 +18,38 @@ egg-webpack-vue
 
 egg-view-vue-ssr
     egg  vue 渲染解决方案插件，统一封装 vue 渲染，缓存，资源注入等功能。 支持服务端渲染，前端渲染， Asset 渲染模式，同时提供 app.vue 扩展接口
+
+
+报错 yarn 和npm 安装会报错， cnpm 正常
+
+error H:\SSR\egg-vue-webpack-boilerplate-feature-green-spa\node_modules\gifsicle: Command failed.
+Exit code: 1
+Command: node lib/install.js
+Arguments:
+Directory: H:\SSR\egg-vue-webpack-boilerplate-feature-green-spa\node_modules\gifsicle
+Output:
+‼ getaddrinfo ENOENT raw.githubusercontent.com
+  ‼ gifsicle pre-build test failed
+  i compiling from source
+  × Error: Command failed: C:\Windows\system32\cmd.exe /s /c "autoreconf -ivf"
+'autoreconf' �����ڲ����ⲿ���Ҳ���ǿ����еĳ���
+���������ļ���
+
+
+    at H:\SSR\egg-vue-webpack-boilerplate-feature-green-spa\node_modules\bin-build\node_modules\execa\index.js:231:11
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
