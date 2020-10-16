@@ -1,8 +1,9 @@
 <template>
     <div class="index-page">
-        <div>
+        <header>
             导航栏
-        </div>
+        </header>
+        <router-link :to="{name:'Detail'}">详情页</router-link>
     </div>
 </template>
 
@@ -12,13 +13,6 @@
     }
 </script>]
 
-<style >
-    /*@import "../style/index.scss";*/
-    .index-page {
-        color: red;
-    }
-
-    header {
-        color: blue;
-    }
+<style lang="scss" scoped>
+    @import "../style/index.scss";
 </style>

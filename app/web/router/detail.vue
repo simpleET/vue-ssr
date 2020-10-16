@@ -1,7 +1,6 @@
 <template>
   <div style="font-size: 24px; text-align: center">
-    <h1>{{article.title}}</h1>
-    <iframe :src="article.url" frameborder="0" width="100%" height="600"></iframe>
+   详情页
   </div>
 </template>
 <style>
