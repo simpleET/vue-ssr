@@ -1,0 +1,26 @@
+$color_num: #5CF4FF;
+$color_blue: #5182E4;
+
+
+//自定义常用的 class
+%text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+%middle {
+  display: inline-block;
+  vertical-align: middle
+}
+
+
+//超过N行就打... 只兼容 weikit
+
+@mixin ellipsis($num) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $num;
+}

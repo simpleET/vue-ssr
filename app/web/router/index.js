@@ -17,7 +17,7 @@ export default function createRouter() {
                 component: Index, // 只能使用该方式引入首页
             },
             {
-                path: '/detail/:id',
+                path: '/detail/:id?',
                 name: 'Detail',
                 component: () => import(/* webpackChunkName:"Detail" */ './detail.vue'),
             }

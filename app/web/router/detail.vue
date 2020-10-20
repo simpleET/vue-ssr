@@ -1,5 +1,5 @@
 <template>
-  <div style="font-size: 24px; text-align: center">
+  <div style="font-size: 24px; text-align: center;color:blue;">
    详情页
   </div>
 </template>

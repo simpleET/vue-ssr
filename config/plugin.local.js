@@ -17,3 +17,8 @@ exports.logview = {
   package: 'egg-logview',
   env: ['local']
 };
+
+exports.httpProxy = {
+  enable: true,
+  package: 'egg-http-proxy',
+};
