@@ -4,14 +4,20 @@ import App from 'framework/app.js';
 import index from './index.vue';
 import createStore from './store';
 import createRouter from './router';
+import Vue from 'vue';
+
+import ElementUI from 'element-ui';
+import './style/element-variables.scss';
 
 import './style/common.scss';
 
-const options = { base: '/' };
+Vue.use(ElementUI);
+
+const options = {base: '/'};
 
 export default new App({
-  index,
-  options,
-  createStore,
-  createRouter,
+    index,
+    options,
+    createStore,
+    createRouter,
 }).bootstrap();

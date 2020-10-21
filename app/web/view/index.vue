@@ -11,11 +11,13 @@
             </div>
         </div>
         <br>
-      <pre v-html="expertList[0]&&expertList[0].content"></pre>
+        <pre v-html="expertList[0]&&expertList[0].content"></pre>
     </div>
 </template>
 
 <script>
+    import {getArtList} from '../api/index';
+
     export default {
         name: "index",
         data() {
@@ -23,27 +25,27 @@
                 expertList: []
             }
         },
-        asyncData({state, dispatch, commit}) {
-            return dispatch('getBanners');
-        },
+          asyncData({state, dispatch, commit}) {
+              return dispatch('getBanners');
+          },
         computed: {
             banners() {
                 return this.$store.state.banners;
             },
         },
-        mounted() {
-            this.$http({
-                url: `/api/xmofficial/article/artList/1/10`,
-                method: "GET",
-                params: {
-                    type: 1,
-                    id: 40,
-                }
-            }).then(res => {
-                if (res.data.code===200) {
-                    this.expertList = res.data.data.list;
-                }
+        async mounted() {
+            let res = await getArtList({
+                type: 1,
+                id: 40
             });
+            if (res.code === 200) {
+                this.expertList = res.data.list;
+            } else {
+                this.$message({
+                    type: 'error',
+                    message: res.msg || '服务器繁忙'
+                });
+            }
         },
     }
 </script>
