@@ -22,11 +22,6 @@ const actions = {
         // 必须要return
         let res = await getBannerList();
         return commit('saveBanners', res.data);
-        /*  return axios.get('https://rcdata.com.cn/xmofficial/banner/bannerList').then(res => {
-              if (res.status === 200) {
-                  commit('saveBanners', res.data.data);
-              }
-          })*/
     }
 };
 

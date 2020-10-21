@@ -1,22 +1,39 @@
 import axios from 'axios';
 import _ from 'lodash';
 import qs from 'qs'
+import Cookie from 'js-cookie';
 import {MessageBox} from 'element-ui';
 
 axios.defaults.baseURL = '/api';
 axios.defaults.timeout = 10000;
 axios.defaults.withCredentials = true; // `withCredentials` 表示跨域请求时是否需要使用凭证
-// axios.defaults.responseType = 'json'; //  默认 json
 
 axios.interceptors.request.use((config) => {
+    if (!EASY_ENV_IS_NODE) {
+        let token = Cookie.get('token');
+        if (token) {
+            config.headers.Authorization = `Bearer ${token}`
+        }
+    }
     return config;
 }, (error) => {
     return Promise.reject(error);
 });
 
 axios.interceptors.response.use((response) => {
-    return response;
+    if (response.status === 200) {
+        if (!EASY_ENV_IS_NODE) {
+            let token = response.headers.token;
+            if (token) {
+                Cookie.set('token', token);
+            }
+        }
+        return Promise.resolve(response);
+    } else {
+        return Promise.reject(response);
+    }
 }, (error) => {
+    // 浏览器的请求报错， 404 500  请求头: Status Code: 404 Not Found
     return Promise.reject(error);
 });
 
@@ -48,7 +65,6 @@ export const fetch = async (url = '', data = {}, method = 'get', config = {}) =>
     try {
         const response = await axios(configure);
         const res = response.data;
-
         if (res.code !== 200) {
             if (res.code === 401) {
                 MessageBox.alert('未登录或超时退出', '提示', {

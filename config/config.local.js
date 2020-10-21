@@ -14,15 +14,16 @@ module.exports = app => {
     exports.logview = {
         dir: path.join(app.baseDir, 'logs')
     };
-
-    exports.httpProxy = {
+    // 代理使用nginx.exe来做,否则 post 请求会报错 403  invalid csrf token
+   /* exports.httpProxy = {
         '/api': {
-            target: 'https://rcdata.com.cn',
+            // target: 'https://rcdata.com.cn',
+            target: 'http://192.168.20.116:1998',
             pathRewrite: {
                 '^/api': ''
             }
         }
-    };
+    };*/
 
     return exports;
 };
