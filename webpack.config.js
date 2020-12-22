@@ -14,6 +14,10 @@ module.exports = {
                to: 'asset/css/bootstrap.min.css'
              }]*/
         }],
+    deploy:{ // https://www.yuque.com/easy-team/easywebpack/build
+        filename:'zip', // ./zip/dist  ./zip/zip.zip
+        target:'./',// 打包到当前目录
+    }
     /*scss: {
       options: { includePaths: ["app/web/style"] }
     },

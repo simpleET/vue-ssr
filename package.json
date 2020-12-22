@@ -9,7 +9,7 @@
     "build": "easy build prod",
     "build:test": "cross-env easy clean && easy build test",
     "start": "egg-scripts start --title=egg-server-longsk",
-    "start:test": "egg-scripts start --env=test",
+    "start:test": "cross-env egg-scripts start --env=test",
     "stop": "egg-scripts stop --title=egg-server-longsk",
     "dev": "egg-bin dev",
     "lint": "eslint .",
