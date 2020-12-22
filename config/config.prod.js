@@ -7,6 +7,9 @@
 
 module.exports = app => {
   const exports = {};
-
+  exports.alinode = {
+    appid: '87157',
+    secret: '44cdfcbcd23feaae86ee767dc5a83a325112a4e0',
+  };
   return exports;
 };
